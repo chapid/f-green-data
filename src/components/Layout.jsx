@@ -9,7 +9,7 @@ function Layout() {
       <SideBar />
       <div className='flex-1'>
         <Header />
-        <div className='p-4'>
+        <div className='p-10'>
           <Outlet />
         </div>
       </div>

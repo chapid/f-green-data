@@ -1,4 +1,4 @@
-import { GrAppsRounded, GrUser, GrArticle, GrSettingsOption, GrHelp } from "react-icons/gr";
+import { GrAppsRounded, GrUser, GrArticle, GrSettingsOption, GrHelp, GrVend } from "react-icons/gr";
 
 export const DASHBOARD_SIDEBAR_ITEMS = [
   {
@@ -6,6 +6,12 @@ export const DASHBOARD_SIDEBAR_ITEMS = [
     label: 'Dashboard',
     path: '/',
     icon: <GrAppsRounded />
+  },
+  {
+    key: 'inventory',
+    label: 'Inventory',
+    path: '/inventory',
+    icon: <GrVend />
   },
   {
     key: 'profile',
