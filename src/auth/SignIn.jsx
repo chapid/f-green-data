@@ -21,7 +21,7 @@ function SignIn() {
         setAuthToken(response.data.token);
         console.log(response.data);
         console.log("Sign in successful");
-        window.location.href = "/profile";
+        window.location.href = "/";
       })
       .catch((error) => {
         console.error("Sign in failed");

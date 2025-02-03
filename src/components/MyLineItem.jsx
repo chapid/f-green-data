@@ -1,6 +1,6 @@
 function MyLineItem(props) {
   return (
-    <article key={props.id} className="flex max-w-xl flex-col bg-white items-start justify-between border border-gray-300 rounded-lg p-4">
+    <article key={props.id} className="flex max-w-xl flex-col bg-white items-start justify-between border border-gray-300 rounded-lg p-4 shadow-md">
       <div className="flex items-center gap-x-4 text-xs">
         <time dateTime={props.datetime} className="text-gray-500">
           {props.date}

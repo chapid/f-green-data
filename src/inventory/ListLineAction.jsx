@@ -1,44 +1,27 @@
+import { useState, useEffect } from 'react';
+import { request } from '../api/AxiosHandler';
 import { LineItem } from '../components/LineItem.jsx';
 
-
-const ListLineExamples = [
-  {
-    id: "1",
-    imageUrl: "https://picsum.photos/200",
-    name: "Natalia Mojica",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
-  },
-  {
-    id: "2",
-    imageUrl: "https://picsum.photos/200",
-    name: "Natalia Mojica",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
-  },
-  {
-    id: "3",
-    imageUrl: "https://picsum.photos/200",
-    name: "Natalia Mojica",
-    description: "Lorem Ionly five centuries,",
-  },
-  {
-    id: "4",
-    imageUrl: "https://picsum.photos/200",
-    name: "Natalia Mojica",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
-  },
-  {
-    id: "5",
-    imageUrl: "https://picsum.photos/200",
-    name: "Natalia Mojica",
-    description: "Lorr since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
-  },
-]
 function ListLineAction() {
+
+  const [lines, setLines] = useState([]);
+  
+  useEffect(() => {
+    request("GET", "/quantify-emissions/action-lines")
+      .then((response) => {
+        console.log(response);
+        setLines(response.data);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch lines");
+      });
+  }, []);
+
   return (
     <div className="max-w-full mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="h-80 overflow-y-auto p-6">
         <ul role="list" className="divide-y divide-gray-100 pb-4">
-          {ListLineExamples.map((item) => (
+          {lines.map((item) => (
             <LineItem
               key={item.id}
               imageUrl={item.imageUrl}
