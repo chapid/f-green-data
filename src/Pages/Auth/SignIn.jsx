@@ -19,8 +19,6 @@ function SignIn() {
     })
       .then((response) => {
         setAuthToken(response.data.token);
-        console.log(response.data);
-        console.log("Sign in successful");
         window.location.href = "/";
       })
       .catch((error) => {

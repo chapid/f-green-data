@@ -1,9 +1,8 @@
 .slick-prev:before,
 .slick-next:before {
-  color: #7c7b7b;
-}
-/* Agrega espacio entre cada MyLineItem */
-.slick-slide > div {
-  padding: 0 10px; /* Ajusta el valor según el espacio que desees */
+  color: #525151;
 }
 
+.slick-slide > div {
+  padding: 0 10px; 
+}

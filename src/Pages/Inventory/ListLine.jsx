@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect , useContext} from 'react';
 import { request } from '../../api/AxiosHandler';
-import { LineItem } from '../../Components/LineAction'
+import { LineItem } from '../../Components/LineItem'
+import './modal.css'
 
-function ListLineAction() {
+function ListLine() {
 
   const [lines, setLines] = useState([]);
   
   useEffect(() => {
     request("GET", "/quantify-emissions/action-lines")
       .then((response) => {
-        console.log(response);
         setLines(response.data);
       })
       .catch((error) => {
@@ -19,7 +19,7 @@ function ListLineAction() {
 
   return (
     <div className="max-w-full mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-      <div className="h-80 overflow-y-auto p-6">
+      <div className="h-60 overflow-y-auto p-6 custom-scrollbar">
         <ul role="list" className="divide-y divide-gray-100 pb-4">
           {lines.map((item) => (
             <LineItem
@@ -35,4 +35,4 @@ function ListLineAction() {
   );
 }
 
-export { ListLineAction };  
+export { ListLine };  

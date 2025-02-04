@@ -9,7 +9,7 @@ export const DASHBOARD_SIDEBAR_ITEMS = [
   },
   {
     key: 'inventory',
-    label: 'Inventory',
+    label: 'Inventario',
     path: '/inventory',
     icon: <GrVend />
   },

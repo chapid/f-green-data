@@ -9,7 +9,7 @@ function Layout() {
       <SideBar />
       <div className='flex-1'>
         <Header />
-        <div className='p-10'>
+        <div className='py-6 px-10'>
           <Outlet />
         </div>
       </div>

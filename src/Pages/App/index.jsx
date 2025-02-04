@@ -5,21 +5,24 @@ import { Layout } from '../../Components/Layout'
 import { Dashboard } from '../Dashboard'
 import { Inventory } from '../Inventory'
 import { Product } from '../Product'
+import { LineItemProvider } from '../../Context'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />} >
-          <Route index element={<Dashboard />} />
-          <Route path="/profile" element={<h1>Profile</h1>} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/product" element={<Product />} />
-        </Route>
-        <Route path="/login" element={<SignIn />} />
-        <Route path="/register" element={<SignUp />} />
-      </Routes>
-    </BrowserRouter>
+    <LineItemProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />} >
+            <Route index element={<Dashboard />} />
+            <Route path="/profile" element={<h1>Profile</h1>} />
+            <Route path="/inventory" element={<Inventory />} />
+            <Route path="/product" element={<Product />} />
+          </Route>
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/register" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+    </LineItemProvider>
   )
 }
 

@@ -13,7 +13,6 @@ function SignUp() {
     getValues } = useForm({ mode: "onChange" });
 
   function onSubmit(data) {
-    console.log(data);
     request("POST", "/auth/register", {
       email: data.email,
       password: data.password,
@@ -22,7 +21,6 @@ function SignUp() {
     })
       .then((response) => {
         console.log(response.data);
-        console.log("User created successfully");
       })
       .catch((error) => {
         console.log(error);
