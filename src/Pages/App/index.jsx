@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { SignIn } from './auth/SignIn'
-import { SignUp } from './auth/SignUp'
-import { Layout } from './components/Layout'
-import { Dashboard } from './dashboard/Dashboard'
-import { Inventory } from './inventory/Inventory'
-import { Product } from './product/Product'
+import { SignIn } from '../Auth/SignIn'
+import { SignUp } from '../Auth/SignUp'
+import { Layout } from '../../Components/Layout'
+import { Dashboard } from '../Dashboard'
+import { Inventory } from '../Inventory'
+import { Product } from '../Product'
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 
-import { MENU_ITEMS_MESSAGES, MENU_ITEMS_NOTIFICATIONS, MENU_ITEMS_PROFILE } from "../lib/consts/menuItemsHeader";
+import { MENU_ITEMS_MESSAGES, MENU_ITEMS_NOTIFICATIONS, MENU_ITEMS_PROFILE } from "../../lib/consts/menuItemsHeader";
 import { GrChat, GrNotification } from "react-icons/gr";
-import { PopoverUI } from "../components/PopoverUI";
+import { PopoverUI } from "./PopoverUI";
 
 function Header() {
 

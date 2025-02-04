@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import { FcLandscape } from "react-icons/fc";
 import { GrLogout } from "react-icons/gr";
-import { DASHBOARD_SIDEBAR_FOOTER_ITEMS, DASHBOARD_SIDEBAR_ITEMS } from "../lib/consts/navigation";
+import { DASHBOARD_SIDEBAR_FOOTER_ITEMS, DASHBOARD_SIDEBAR_ITEMS } from "../../lib/consts/navigation";
 
 const linkClasses = "flex items-center gap-2 font-light px-3 py-2 hover:bg-neutral-700 hover:no-underline active:bg-neutral-800 rounded-sm text-base";
 

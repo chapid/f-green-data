@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { request } from '../api/AxiosHandler';
-import { LineItem } from '../components/LineItem.jsx';
+import { request } from '../../api/AxiosHandler';
+import { LineItem } from '../../Components/LineAction'
 
 function ListLineAction() {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MyLineItem } from "../components/MyLineItem";
+import { MyLineItem } from "../../Components/LineActionCard";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

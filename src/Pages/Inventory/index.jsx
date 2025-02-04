@@ -1,5 +1,5 @@
-import { ListLineAction } from "./ListLineAction";
-import { MyListLineActions } from "./MyListLineActions";
+import { ListLineAction } from "./ListLineAction"
+import { MyListLineActions } from './MyListLineActions'
 
 function Inventory() {
   return (

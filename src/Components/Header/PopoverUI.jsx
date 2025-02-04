@@ -1,5 +1,3 @@
-//https://headlessui.com/react/menu
-
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 
 function PopoverUI({ buttonTitle, menuItems }) {

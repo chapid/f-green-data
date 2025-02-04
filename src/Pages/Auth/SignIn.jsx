@@ -1,8 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { FormField } from '../components/FormField'
-import { request, setAuthToken } from '../api/AxiosHandler';
+import { FormField } from '../../Components/FormField'
+import { request, setAuthToken } from '../../api/AxiosHandler';
 
 function SignIn() {
 

@@ -1,4 +1,4 @@
-import { BoxWrapper } from '../components/BoxWrapper';
+import { BoxWrapper } from '../../Components/DashboardCard';
 import { IoBagHandle } from 'react-icons/io5';
 
 function DashboardStatsGrid() {
