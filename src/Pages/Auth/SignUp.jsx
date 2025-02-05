@@ -1,8 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { FormField } from '../components/FormField'
-import { request } from '../api/AxiosHandler';
+import { FormField } from '../../Components/FormField'
+import { request } from '../../api/AxiosHandler';
 
 function SignUp() {
 
@@ -13,7 +13,6 @@ function SignUp() {
     getValues } = useForm({ mode: "onChange" });
 
   function onSubmit(data) {
-    console.log(data);
     request("POST", "/auth/register", {
       email: data.email,
       password: data.password,
@@ -22,7 +21,6 @@ function SignUp() {
     })
       .then((response) => {
         console.log(response.data);
-        console.log("User created successfully");
       })
       .catch((error) => {
         console.log(error);
@@ -35,8 +33,8 @@ function SignUp() {
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           alt="Your Company"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-          className="mx-auto h-10 w-auto"
+          src="../public/iconGreen.png"
+          className="mx-auto h-20 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Create an account

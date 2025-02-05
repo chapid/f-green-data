@@ -1,8 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { FormField } from '../components/FormField'
-import { request, setAuthToken } from '../api/AxiosHandler';
+import { FormField } from '../../Components/FormField'
+import { request, setAuthToken } from '../../api/AxiosHandler';
 
 function SignIn() {
 
@@ -19,9 +19,7 @@ function SignIn() {
     })
       .then((response) => {
         setAuthToken(response.data.token);
-        console.log(response.data);
-        console.log("Sign in successful");
-        window.location.href = "/profile";
+        window.location.href = "/";
       })
       .catch((error) => {
         console.error("Sign in failed");
@@ -33,8 +31,8 @@ function SignIn() {
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           alt="Your Company"
-          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-          className="mx-auto h-10 w-auto"
+          src="../public/iconGreen.png"
+          className="mx-auto h-20 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Sign in to your account
