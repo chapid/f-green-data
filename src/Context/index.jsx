@@ -9,12 +9,17 @@ function LineItemProvider({ children }) {
   // Line Action to add
   const [newLineAction, setNewLineAction] = useState({});
 
+  // Line Actions own user
+  const [myLineActions, setMyLineActions] = useState([]);
+
   return (
     <LineItemContext.Provider value={{
       openModal,
       setOpenModal,
       newLineAction,
-      setNewLineAction
+      setNewLineAction,
+      myLineActions,
+      setMyLineActions
     }}>
       {children}
     </LineItemContext.Provider>

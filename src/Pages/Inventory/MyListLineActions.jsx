@@ -1,60 +1,14 @@
-import React from 'react';
-import { MyLineItem } from "../../Components/LineActionCard";
+import { useEffect, useContext } from 'react';
 import Slider from 'react-slick';
+import { MyLineItem } from "../../Components/LineActionCard";
+import { LineItemContext } from '../../Context';
+import { request } from '../../api/AxiosHandler';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./carrousel.css";
 
-const posts = [
-  {
-    id: 1,
-    title: '1 Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-  },
-  {
-    id: 2,
-    title: '2 Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-  },
-  {
-    id: 3,
-    title: '3 Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-  },
-  {
-    id: 4,
-    title: '4 Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-  },
-  {
-    id: 5,
-    title: '5 Boost your conversion rate',
-    href: '#',
-    description:
-      'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-  },
-  // More posts...
-];
-
 function MyListLineActions() {
+
   const settings = {
     dots: true,
     infinite: true,
@@ -63,19 +17,29 @@ function MyListLineActions() {
     slidesToScroll: 3,
   };
 
+  const contextItem = useContext(LineItemContext);
+
+  useEffect(() => {
+    console.log('MyListLineActions mounted');
+    request("GET", "/quantify-emissions/user")
+      .then((response) => {
+        console.log(response.data);
+        contextItem.setMyLineActions(response.data);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch lines");
+      });
+  }, []);
+
   return (
     <div className='w-full max-w-5xl mx-auto'>
       <Slider {...settings}>
-        {posts.map((post) => (
+        {contextItem.myLineActions?.map((item) => (
           <MyLineItem
-            key={post.id}
-            title={post.title}
-            href={post.href}
-            category={post.category}
-            date={post.date}
-            datetime={post.datetime}
-            author={post.author}
-            description={post.description}
+            key={item.id}
+            title={item.name_action_line}
+            baseYear={item.base_year}
+            historicalYear={item.historic_year}
           />
         ))}
       </Slider>
