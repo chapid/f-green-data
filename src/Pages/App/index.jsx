@@ -12,16 +12,17 @@ function App() {
     <LineItemProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />} >
+          <Route path="/" element={<SignIn />} />
+          <Route path="/dashboard" element={<Layout />} >
             <Route index element={<Dashboard />} />
-            <Route path="/profile" element={<h1>Profile</h1>} />
-            <Route path="/inventory" element={<Inventory />} />
-            <Route path="/product" element={<Product />} />
+            <Route path="profile" element={<h1>Profile</h1>} />
+            <Route path="inventory" element={<Inventory />} />
+            <Route path="product" element={<Product />} />
           </Route>
-          <Route path="/login" element={<SignIn />} />
           <Route path="/register" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
+      
     </LineItemProvider>
   )
 }

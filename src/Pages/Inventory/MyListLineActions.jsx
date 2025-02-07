@@ -20,10 +20,8 @@ function MyListLineActions() {
   const contextItem = useContext(LineItemContext);
 
   useEffect(() => {
-    console.log('MyListLineActions mounted');
     request("GET", "/quantify-emissions/user")
       .then((response) => {
-        console.log(response.data);
         contextItem.setMyLineActions(response.data);
       })
       .catch((error) => {

@@ -4,25 +4,25 @@ export const DASHBOARD_SIDEBAR_ITEMS = [
   {
     key: 'dashboard',
     label: 'Dashboard',
-    path: '/',
+    path: '/dashboard',
     icon: <GrAppsRounded />
   },
   {
     key: 'inventory',
     label: 'Inventario',
-    path: '/inventory',
+    path: '/dashboard/inventory',
     icon: <GrVend />
   },
   {
     key: 'profile',
     label: 'Profile',
-    path: '/profile',
+    path: '/dashboard/profile',
     icon: <GrUser />
   },
   {
     key: 'product',
     label: 'Product',
-    path: '/product',
+    path: '/dashboard/product',
     icon: <GrArticle />
   }
 ];
